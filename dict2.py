@@ -1,7 +1,13 @@
-# Dictionary using mysql database
+# --------------------------------------------
+# English dictionary using mysql database.
+# Email stephanetran1@gmail.com
+# --------------------------------------------
 import mysql.connector
 from difflib import get_close_matches
 
+# Connect to mysql database containing a table with two fields: 
+# Expression: word
+# Definition: definition of word
 con = mysql.connector.connect(
     user = "ardit700_student",
     password = "ardit700_student",
@@ -12,6 +18,7 @@ con = mysql.connector.connect(
 cursor = con.cursor()
 
 def get_def(word):
+    """Retrieve the definition of word using sql queries."""
     query = cursor.execute(f"Select * FROM Dictionary WHERE Expression = '{word}'")
     results = cursor.fetchall()
     query2 = cursor.execute(f"Select * FROM Dictionary WHERE Expression LIKE '{word[0]}%{word[-1]}'")

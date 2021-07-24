@@ -1,10 +1,14 @@
-# Dictionary using json data file. 
+# --------------------------------------------
+# english dictionary using json data file
+# email stephanetran1@gmail.com
+# --------------------------------------------
 import json
 from difflib import get_close_matches
 
 data = json.load(open("data.json"))
 
 def get_def(word):
+    """Retrieve the definition of word using json file."""
     word = word.lower()
     if word in data:
         return data[word]
