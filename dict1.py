@@ -1,6 +1,6 @@
 # --------------------------------------------
-# english dictionary using json data file
-# email stephanetran1@gmail.com
+# English dictionary using json data file.
+# Email stephanetran1@gmail.com
 # --------------------------------------------
 import json
 from difflib import get_close_matches
